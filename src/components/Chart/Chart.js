@@ -3,16 +3,16 @@ import React from "react";
 import ChartBar from "./ChartBar";
 import "./Chart.css";
 const Chart = (props) => {
-  const datePointsValues = props.datePoints.map(dataPoint => dataPoint.value)
-  const totalMaximum = Math.max(...datePointsValues);
+  const dataPointValues = props.dataPoints.map((dataPoint) => dataPoint.value);
+  const totalMaximum = Math.max(...dataPointValues);
   return (
     <div className="chart">
-      {props.datePoints.map((datePoints) => (
+      {props.dataPoints.map((dataPoint) => (
         <ChartBar
-          key={datePoints.label}
-          value={datePoints.value}
+          key={dataPoint.label}
+          value={dataPoint.value}
           maxValue={totalMaximum}
-          label={datePoints.label}
+          label={dataPoint.label}
         />
       ))}
     </div>
